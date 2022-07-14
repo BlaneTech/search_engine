@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+    <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>blog articles Search</title>
+
+  </head>
+  <body>
+
+  <div class="container">
+    <div style="background:transparent !important" class="jumbotron">
+      <div style="font-family: 'Tangerine', serif;
+      font-size: 4px;">
+        <p style="font-size: 100px; text-align: center;"> <strong>Touti-vore Team, Téppi Taffeur</strong> <br> Search engine</p>
+      </div>
+    </div>
+
+  <form action="/search/results" method="post">
+    <div class="input-group">
+      <input type="text" class="form-control input-lg" name="inputt" placeholder="Search"  autofocus>
+      <div class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="submit">
+          <i class="glyphicon glyphicon-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    
+  <h1 style="text-align: center;">Results: ({{ res['hits']['total']['value'] }}) </h1>
+  
+
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th>Date Stamp</th> -->
+        <!-- <th>Source</th> -->
+        <th>Title</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+
+{% for hit in res['hits']['hits'] %}
+    <tbody>
+      <tr>
+        <!-- <th scope="row">{{ hit['_source']['date'] }}</th> -->
+          <!-- <td>{{ hit['_index'] }}</td> -->
+          <td><a href="{{ hit['_source']['url'] }}">{{ hit['_source']['title'] }}</a></td>
+          <td>{{ hit['_source']['tags'] }}</td>
+      </tr>
+    </tbody>
+{% endfor %}
+  </table>
+
+        
+
+      </div>
+    </div>
+  </body>
+</html>

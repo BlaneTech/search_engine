@@ -6,7 +6,7 @@ Build a search engine using elasticsearch
 # 1. Pour executer le code, il faut:
 
 # 1.1 Créer un environnement virtuel.
-    Positionner vous dans le repertoire du projet et lancer les commandes suivantes:
+### Positionner vous dans le repertoire du projet et lancer les commandes suivantes:
 
     python3 -m venv nom_de_votre_environnement_virtuel
 
@@ -23,9 +23,9 @@ Build a search engine using elasticsearch
 
     docker-compose up
 
-# Up le tour est jouer, il ne vous reste plus qu'à executer le fichier 
-    app.py
+## Up le tour est jouer, il ne vous reste plus qu'à executer le fichier app.py
 
+    python3 app.py
 
 # Penser à arrêter docker-compse après avoir fini de tester car celà consome beaucoup trop de ressource
 
